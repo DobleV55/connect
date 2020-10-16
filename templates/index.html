@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>fullPage.js - Fading Effect Extension</title>
+    <meta name="author" content="Alvaro Trigo Lopez" />
+    <meta name="description" content="Fading Effect Extension" />
+    <meta name="keywords"  content="fullpage,extension,addon,plugin,fading,effect,fadein,fadeout,fade,slides,sections,scroll" />
+    <meta name="Resource-type" content="Document" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="https://alvarotrigo.com/fullPage/fullpage.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/circles.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://alvarotrigo.com/fullPage/tumblr/fullpage.parallax.tumblr.min.js"></script>
+    <script type="text/javascript" src="https://alvarotrigo.com/fullPage/fullpage.extensions.min.js"></script>
+    <script type="text/javascript">var _0x44ed=['YWx2YXJvdHJpZ28uY29tXzlNZGNHRnlZV3hzWVhnPTFyRQ=='];(function(_0x23a77b,_0x57db09){var _0x43a90a=function(_0x5be8e7){while(--_0x5be8e7){_0x23a77b['push'](_0x23a77b['shift']());}};_0x43a90a(++_0x57db09);}(_0x44ed,0xb2));var _0x4132=function(_0x1ca3ee,_0x13eaae){_0x1ca3ee=_0x1ca3ee-0x0;var _0x58e2eb=_0x44ed[_0x1ca3ee];return _0x58e2eb;};var parallaxKey=_0x4132('0x0');</script>
+</head>
+<body class="fp-big-nav">
+
+<div id="fullpage">
+    <div class="section" id="section-1">
+        <div class="section-1-bg fp-bg"></div>
+        <div class="section-1-whatIs"><a href="#secondPage" style="font-family: Montserrat;color:#5BF7BE;">What is Connect?</a></div>
+
+        <div class='bg'></div>
+
+        <div class="button-container">
+            {% if user.is_authenticated %}
+                <button class="p-button"><a href="/accounts/logout" style="opacity: 100%; color: #5BF7BE">SIGN OUT</a></button>
+            {% else %}
+                <button class="p-button"><a href="/accounts/login" style="opacity: 100%; color: #5BF7BE">SIGN IN</a></button>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <div class="section fp-auto-height-responsive" id="section-2">
+        <div class="fp-bg">
+            <div class="content section-2-content">
+                <div class="section-2-animation">
+
+                    <img style="height: 120px;" src="/static/images/logo.png" alt="">
+                </div>
+                <h1 class="section-2-title">
+                    Connect comes to connect your idea with investors and incubators                </h1>
+                <p class="section-2-intro">
+                    We made it really, really simple for people to make a blog and put whatever they want on it. Stories, photos, GIFs, TV shows, links, quips, dumb jokes, smart jokes, Spotify tracks, mp3s, videos, fashion, art, deep stuff. Tumblr is 397 million different blogs, filled with literally whatever.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="section fp-auto-height-responsive" id="section-3">
+        <div class="fp-bg">
+            <div class="section-3-wrapper">
+                <div class="content section-3-content">
+                    <h1 class="section-3-title">
+                        Tumblr is blogs.
+                    </h1>
+                    <p class="section-3-intro">
+                        Turns out that when you make it easy to create interesting things, that’s exactly what people do. All those great, random blogs your friends send you, those are Tumblr blogs. We’ll help you find and follow blogs like that, and we’ll help other people find and follow yours.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section fp-table fp-auto-height-responsive" id="section-4">
+        <div class="fp-tableCell">
+            <h1>Isn't it amazing? :) </h1>
+            <input type="hidden" id="_4" value="3" />
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="_4" value="3" />
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var animationCont = 0;
+        new fullpage('#fullpage', {
+            /* Background Colors */
+            sectionsColor: ['#36465d', '#1B2F33', '#a77dc2', 'whitesmoke'],
+            anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage'],
+            menu: '#menu',
+            navigation: true,
+            navigationPosition: 'left',
+            easingcss3: 'cubic-bezier(.825,0,.5,1)',
+            parallax: true,
+            parallaxKey: parallaxKey,
+            parallaxOptions: {
+                type: 'reveal',
+                percentage: 100,
+                property: 'translate'
+            },
+            onLeave: function(origin, destination, direction){
+                if(destination.index === 1){
+                    animationCont++;
+                    $('.section-2-animation').css('background-image', 'url(animation3.gif?v='+animationCont+')');
+                }
+            },
+            afterLoad: function(origin, destination, direction){
+                $('.blogs-graphic').toggleClass('active', (destination.index === 2));
+            },
+            afterRender: function(){
+                //forcing visual render of the element to we can apply the transition
+                $('.section-1-whatIs')[0].clientHeight;
+                $('.section-1-bg')[0].clientHeight;
+                $('.section-1-bg, .section-1-whatIs, .section-1-content').addClass('active');
+            },
+            responsiveWidth: 800,
+            afterResponsive: function(isResponsive){
+                if(isResponsive){
+                    fullpage_api.parallax.destroy();
+                }else{
+                    fullpage_api.parallax.init();
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

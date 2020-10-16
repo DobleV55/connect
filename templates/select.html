@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select</title>
+    <link rel="stylesheet" href="/static/css/select.css">
+    <script src="/static/js/select.js"></script>
+</head>
+<body>
+    <div class="slider">
+        <div class="slides">
+
+            <input type="radio" name='btn' id='idea'>
+            <input type="radio" name='btn' id='investor'>
+            <input type="radio" name='btn' id='runner'>
+
+            <div class="slide first">
+                <img src="/static/images/startup-web.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="/static/images/investor-web.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="/static/images/incubator-web.png" alt="">
+            </div>
+
+        </div>
+
+        <div class="navigation-manual">
+            <label style="background: #14212B" onclick="buttonColor('idea-label')" for="idea" class='manual-btn' id='idea-label'>
+                <div class="label">
+                    <div>
+                        <img class='button-logo' src="/static/svgs/idea.svg" alt="">
+                    </div>
+                    <div style="font-family: montserrat; font-weight: 700; color: white;" id='idea-text'>
+                        <p class="button-title">I have an Idea/Start Up</p>
+                        <p class="button-text">
+                            Strategy experience and analytical
+                            expertise combine to enable
+                        </p>
+                    </div>
+                </div>
+            </label>
+            <label onclick="buttonColor('investor-label')" for="investor" class='manual-btn' id='investor-label'>
+                <div class="label">
+                    <div>
+                        <img class='button-logo' src="/static/svgs/investor.svg" alt="">
+                    </div>
+                    <div style="font-family: montserrat; font-weight: 700; color: black;" id='investor-text'>
+                        <p class="button-title">I'm an Investor</p>
+                        <p class="button-text">
+                            Strategy experience and analytical
+                            expertise combine to enable
+                        </p>
+                    </div>
+                </div>
+            </label>
+            <label onclick="buttonColor('runner-label')" for="runner" class='manual-btn' id='runner-label'>
+                <div class="label">
+                    <div>
+                        <img class='button-logo' src="/static/svgs/egg.svg" alt="">
+                    </div>
+                    <div style="font-family: montserrat; font-weight: 700; color: black;" id='runner-text'>
+                        <p class="button-title">I’m an Incubator/Accelerator</p>
+                        <p class="button-text">
+                            Strategy experience and analytical
+                            expertise combine to enable
+                        </p>
+                    </div>
+                </div>
+            </label>
+        </div>
+</body>
+</html>

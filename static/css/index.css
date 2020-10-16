@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+body, html {
+  margin: 0;
+  height: 100%;
+}
+
+.bg {
+  /* The image used */
+  background-image: url('/static/images/background.jpg');
+  
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.button-container {
+  position: absolute;
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.p-button{
+  margin-top: 40%;
+  font-family: 'Montserrat' sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  background-color:#0F2E24;
+  text-decoration: none;
+  padding: 13px 50px;
+  border: none;
+  border-radius: 27px;
+  transition: ease-out 0.3s;
+  outline: none;
+}
+
+.p-button:hover{
+  opacity: 20%;
+}
+
+.primary {
+  background-color:#0F2E24;
+}

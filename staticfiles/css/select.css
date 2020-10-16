@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FBFBFB;
+}
+
+.slider{
+    margin-bottom: 100px;
+    width: 1440px;
+    height: 596px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slides{
+    width: 500%;
+    height: 595px;
+    display: flex;
+
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 20%;
+    transition: 1s;
+}
+
+.slide img{
+    width: 1440px;
+    height: 596px;
+}
+
+/* manual-navigation */
+
+.navigation-manual{
+    position: absolute;
+    width: 1440px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    width: 369px;
+    height: 124px;
+    background:#FFFFFF;
+    padding: 5px;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+/* .manual-btn:hover{
+    background: green;
+}
+*/
+#idea:checked ~ .first{
+    margin-left: 0;
+}
+
+#investor:checked ~ .first{
+    margin-left: -20%;
+}
+
+#runner:checked ~ .first{
+    margin-left: -40%;
+}
+
+.label {
+    width: 369px;
+    height: 124px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.button-logo {
+    margin-left: 24px;
+    width: 49px;
+}
+
+.button-title{
+    
+}
+
+.button-text {
+    font-size: 12px;
+    max-width: 219px;
+    max-height: 41px;
+    margin-right: 55px;
+}
+
